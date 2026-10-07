@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#05070c" />
+  <title>Pixel Space Savers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" class="shell" aria-label="Everett's Pixel Space Savers arcade game">
+    <header class="game-header">
+      <div class="brand" aria-label="Everett's Pixel Space Savers">
+        <span class="brand-mark" aria-hidden="true">▟▙</span>
+        <span class="brand-stack"><span class="brand-owner">Everett's</span><span class="brand-title">PIXEL SPACE SAVERS</span></span>
+      </div>
+      <div class="hud" aria-live="polite">
+        <span>SCORE <b id="score">1000</b></span><span>LEVEL <b id="level">1</b></span><span>LIVES <b id="lives">10</b></span><span>POWER <b id="power">1</b></span>
+      </div>
+      <button id="fullscreenButton" class="tiny-button" type="button">FULL SCREEN</button>
+    </header>
+
+    <section class="game-wrap">
+      <canvas id="game" width="960" height="640" aria-label="Pixel Space Savers game area"></canvas>
+
+      <div id="startOverlay" class="overlay shown"><div class="panel title-panel">
+        <p class="opening-owner">Everett's</p><h1>PIXEL SPACE SAVERS</h1><p class="opening-legal">© Everett 2026</p>
+        <p class="tagline">Defend the stars. Upgrade your ship. Beat the swarm.</p>
+        <p><kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> to move &nbsp;•&nbsp; <kbd>SPACE</kbd> to fire</p>
+        <p><kbd>P</kbd> pause &nbsp;•&nbsp; <kbd>R</kbd> restart &nbsp;•&nbsp; <kbd>F</kbd> full screen</p>
+        <button id="startButton" type="button">START MISSION</button>
+      </div></div>
+
+      <div id="upgradeOverlay" class="overlay"><div class="panel upgrade-panel">
+        <div class="shop-heading">
+          <p class="eyebrow">LEVEL CLEARED</p><h2>SHIP UPGRADE BAY</h2>
+          <p class="upgrade-bank">AVAILABLE SCORE: <strong id="upgradeScore">0</strong></p>
+        </div>
+        <div id="upgradeChoices" class="upgrade-grid"></div>
+        <div class="shop-footer"><button id="continueButton" type="button">NEXT LEVEL ▶</button></div>
+      </div></div>
+
+      <div id="gameOverOverlay" class="overlay"><div class="panel">
+        <h2>MISSION OVER</h2><p>FINAL SCORE <strong id="finalScore">0</strong></p>
+        <label for="initials">ENTER INITIALS</label><input id="initials" maxlength="3" autocomplete="off" inputmode="text" aria-label="Three initials for leaderboard" />
+        <button id="saveScoreButton" type="button">SAVE SCORE</button><button id="playAgainButton" type="button" class="secondary">PLAY AGAIN</button>
+      </div></div>
+
+      <div id="levelOverlay" class="level-card" aria-live="assertive"></div>
+
+      <div class="mobile-controls" aria-label="Touch controls">
+        <div id="moveControls" class="move-controls" aria-label="Slide left or right to steer">
+          <button id="touchLeft" class="touch-button direction-button" type="button" aria-label="Move left">◀</button>
+          <button id="touchRight" class="touch-button direction-button" type="button" aria-label="Move right">▶</button>
+        </div>
+        <button id="touchFire" class="touch-button fire-button" type="button" aria-label="Fire">FIRE</button>
+      </div>
+    </section>
+
+    <section class="below-game">
+      <div class="instructions"><h2>EVERETT'S SPACE SAVERS</h2><div class="score-key">
+        <span><i class="dot yellow"></i> 1 m Yellow +100</span>
+        <span><i class="dot orange"></i> 3 m Orange +150</span>
+        <span><i class="dot purple"></i> 5 m Purple +250</span>
+        <span><i class="dot green"></i> 7 m Green +450</span>
+        <span><i class="dot bonus"></i> Bonus ship +1000</span>
+      </div></div>
+      <div class="leaderboard"><h2>HIGH SCORES</h2><ol id="leaderboard"></ol></div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
