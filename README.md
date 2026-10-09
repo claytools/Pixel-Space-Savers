@@ -1,4 +1,4 @@
-# Pixel Space Savers
+# Everett's Pixel Space Savers
 
 **Everett's Pixel Space Savers** is a custom browser arcade game built as an offshoot of the original Pixel Invaders project.
 
@@ -9,6 +9,7 @@ This first version carries over the working arcade structure so Everett's game h
 - Space-shooter gameplay
 - Multiple enemy types and levels
 - Score, lives, power, and upgrade system
+- **Ship Expansion:** buy +1, +10, or +100 expansions using score. Wider wings and live blasters unlock every 10 up to 100, then every 100 up to 1,000. The 100-expansion Battleship and 1,000-expansion Galaxy Flagship get dramatic new silhouettes. Expansion progress resets on a new game.
 - Boss levels
 - Keyboard and touch controls
 - Full-screen support
