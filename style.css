@@ -33,3 +33,16 @@ label{display:block;margin:18px 0 8px;color:#9fb4ca}input{width:112px;text-align
 body.fullscreen-mode .mobile-controls{display:flex}body.fullscreen-mode .game-wrap{padding-bottom:124px;align-content:center}body.fullscreen-mode canvas{width:min(100vw,calc((100svh - 176px)*1.5));max-height:calc(100svh - 176px)}
 @media (orientation:landscape) and (max-height:600px){body.fullscreen-mode .game-header{position:absolute;z-index:20;top:0;left:0;right:0;border:0;background:rgba(6,10,17,.78);padding:4px 8px}body.fullscreen-mode .brand-owner{display:none}body.fullscreen-mode .brand-title{font-size:.72rem}body.fullscreen-mode .hud{font-size:.68rem;gap:5px 8px}body.fullscreen-mode .tiny-button{padding:5px 7px;font-size:.62rem}body.fullscreen-mode .shell{display:block}body.fullscreen-mode .game-wrap{height:100svh;padding-bottom:104px;border:0}body.fullscreen-mode canvas{width:min(100vw,calc((100svh - 104px)*1.5));max-height:calc(100svh - 104px)}body.fullscreen-mode .mobile-controls{bottom:calc(18px + env(safe-area-inset-bottom,0px));padding:0 14px}body.fullscreen-mode .move-controls{gap:16px}body.fullscreen-mode .touch-button{min-height:62px;min-width:82px}body.fullscreen-mode .fire-button{min-width:108px;min-height:66px}.upgrade-panel{height:96%;max-height:96%;width:96%}}
 @media (max-width:430px){.mobile-controls{bottom:calc(30px + env(safe-area-inset-bottom,0px));padding:0 14px}.move-controls{gap:16px}.touch-button{min-width:84px;min-height:70px;font-size:1.5rem}.fire-button{min-width:110px;min-height:74px;font-size:1.08rem}}
+
+
+/* Dedicated long-term ship expansion upgrades (10 / 100 / 1,000). */
+.ship-upgrade-card{grid-column:1/-1;border-color:#65d9c3;background:linear-gradient(130deg,#0b202a,#11192d)}
+.ship-upgrade-card h3{color:#a6ffe6}
+.ship-status{color:#ffd966!important;font-weight:900;letter-spacing:.04em}
+.ship-progress-label{color:#d5ecff!important;font-weight:bold;font-size:.82rem!important}
+.ship-progress-track{height:15px;border:1px solid #579e99;background:#07121d;overflow:hidden}
+.ship-progress-fill{display:block;height:100%;background:linear-gradient(90deg,#43b8cc,#7fffd4);box-shadow:0 0 12px rgba(127,255,212,.7);transition:width .2s}
+.ship-unlocked{font-weight:900;color:#ffdc78!important;text-align:center;letter-spacing:.1em}
+.ship-upgrade-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.ship-upgrade-actions button{min-width:0;margin-top:0;padding:10px 4px;font-size:.82rem;letter-spacing:0}
+@media(max-width:500px){.ship-upgrade-actions{grid-template-columns:1fr}.ship-upgrade-actions button{padding:10px;font-size:.88rem}}
