@@ -21,7 +21,7 @@ function nextShipMilestone(){
   if(shipUpgrades>=SHIP_MAX)return SHIP_MAX;
   return shipUpgrades<100?(Math.floor(shipUpgrades/10)+1)*10:(Math.floor(shipUpgrades/100)+1)*100;
 }
-function shipUpgradeCostAt(count){return 100+12*count+40*Math.floor(count/10)}
+function shipUpgradeCostAt(count){return 100+count}
 function shipBulkCost(quantity){
   if(quantity<1||shipUpgrades+quantity>SHIP_MAX)return Infinity;
   let sum=0;for(let i=0;i<quantity;i++)sum+=shipUpgradeCostAt(shipUpgrades+i);
@@ -68,7 +68,7 @@ function fire(){
   const pairs=Math.min(5,Math.ceil(upgrades.spread/2));
   const outer=spec.width/2-14;
   for(let p=1;p<=pairs;p++){const vx=55+p*48;add(-vx,-outer);add(vx,outer)}
-  fireCooldown=Math.max(.04,.22-upgrades.fireRate*.018);
+  fireCooldown=Math.max(spec.blasters>=21?.12:.055,.22-upgrades.fireRate*.018);
 }
 function shooter(){const front=new Map();for(const i of invaders)if(i.alive){const c=front.get(i.col);if(!c||i.y>c.y)front.set(i.col,i)}const a=[...front.values()];return a[Math.floor(Math.random()*a.length)]}
 function hitPlayer(n=1){if(player.invuln>0)return;lives=Math.max(0,lives-n);player.invuln=n>=5?2.2:1.6;flash=n>=5?.35:.18;burst(player.x,player.y,n>=5?'#ff9d2d':'#fff',n>=5?40:24);hud();if(lives<=0)gameOver()}
